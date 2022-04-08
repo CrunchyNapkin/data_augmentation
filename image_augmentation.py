@@ -10,7 +10,7 @@ def color_jitter(x, s=0.5):
     x = tf.image.random_contrast(x, lower=1-0.8*s, upper=1+0.8*s)
     x = tf.image.random_saturation(x, lower=1-0.8*s, upper=1+0.8*s)
     x = tf.image.random_hue(x, max_delta=0.2*s)
-    x = tf.clip_by_value(x, 0, 1)
+    x = tf.clip_by_value(x, 0, 255)
     return x
 	
     # Kind of similar to color_jitter
